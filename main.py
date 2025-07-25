@@ -8,11 +8,8 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 
 
-# إعداد الستايل
 sns.set(style='whitegrid')
 
-# تحميل البيانات
-import pandas as pd
 
 # Employee data
 dfE = pd.read_csv("https://raw.githubusercontent.com/MohamedHeshamrg/HR-Project/main/Data/employee.csv")
