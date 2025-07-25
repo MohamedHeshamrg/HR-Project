@@ -12,21 +12,36 @@ from datetime import datetime
 sns.set(style='whitegrid')
 
 # تحميل البيانات
+import pandas as pd
+
+# Employee data
 dfE = pd.read_csv("https://raw.githubusercontent.com/MohamedHeshamrg/HR-Project/main/Data/employee.csv")
 dfE = dfE.rename(columns={'id': 'employee_id'})
-dfDE = pd.read_csv("Data/department_employee.csv")
+
+# Department-Employee
+dfDE = pd.read_csv("https://raw.githubusercontent.com/MohamedHeshamrg/HR-Project/main/Data/department_employee.csv")
 dfDE = dfDE.rename(columns={'from_date': 'from_date_de','to_date' :"to_date_de"})
-dfD = pd.read_csv("Data/department.csv")
+
+# Department
+dfD = pd.read_csv("https://raw.githubusercontent.com/MohamedHeshamrg/HR-Project/main/Data/department.csv")
 dfD = dfD.rename(columns={'id': 'department_id'})
 
+# Salary from Google Drive
 url = 'https://drive.google.com/uc?export=download&id=1Dn5K1a5SCFKgeA54CSqQtYCJ0xYX6020'
 dfS = pd.read_csv(url)
 dfS = dfS.rename(columns={'from_date': 'from_date_s','to_date' :"to_date_s"})
-dfDM = pd.read_csv("Data/department_manager.csv")
+
+# Department Manager
+dfDM = pd.read_csv("https://raw.githubusercontent.com/MohamedHeshamrg/HR-Project/main/Data/department_manager.csv")
 dfDM = dfDM.rename(columns={'from_date': 'from_date_dm','to_date' :"to_date_dm"})
-dfT = pd.read_csv("Data/title.csv")
+
+# Title
+dfT = pd.read_csv("https://raw.githubusercontent.com/MohamedHeshamrg/HR-Project/main/Data/title.csv")
 dfT = dfT.rename(columns={'from_date': 'from_date_t','to_date' :"to_date_t"})
+
+# Current Employee Snapshot
 dfCE = pd.read_csv("https://raw.githubusercontent.com/MohamedHeshamrg/HR-Project/main/Data/current_employee_snapshot.csv")
+
 
 dfDE_full = dfDE.merge(dfD, on='department_id', how='left')
 
