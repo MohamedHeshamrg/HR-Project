@@ -27,7 +27,7 @@ dfD = pd.read_csv("https://raw.githubusercontent.com/MohamedHeshamrg/HR-Project/
 dfD = dfD.rename(columns={'id': 'department_id'})
 
 # Salary from Google Drive
-dfS = pd.read_csv("https://raw.githubusercontent.com/abdullah-hamada7/HR-Analytics_AI-In-Business/main/salary.csv")
+dfS = pd.read_csv('https://raw.githubusercontent.com/abdullah-hamada7/HR-Analytics_AI-In-Business/main/salary.csv')
 dfS = dfS.rename(columns={'from_date': 'from_date_s','to_date' :"to_date_s"})
 
 # Department Manager
